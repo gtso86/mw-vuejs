@@ -1,6 +1,5 @@
+import state from "./state";
+
 export default {
-  state: {
-    user: {},
-    token: null
-  }
+  state
 };
