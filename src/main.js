@@ -1,13 +1,10 @@
 import Vue from "vue";
-import App from "./app/units/shell.vue";
 import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
+import bootstrap from "./app/infra/bootstrap";
 
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  store,
-  ...App
-}).$mount("#app");
+// bootstrap app
+bootstrap({ Vue, router, store }).$mount("#app");
