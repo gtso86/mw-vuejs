@@ -1,9 +1,12 @@
-import SigninPage from "../main.vue";
+import SigninPage from "../signin.vue";
 
 const routes = [
   {
-    path: "/signin",
-    component: SigninPage
+    path: "/auth/signin",
+    component: SigninPage,
+    meta: {
+      needAuth: false
+    }
   }
 ];
 

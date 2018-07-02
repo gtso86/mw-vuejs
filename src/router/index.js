@@ -9,11 +9,11 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   routes: [
-    ...Units,
     {
       path: "/",
-      redirect: "/signin"
+      redirect: "/content"
     },
+    ...Units,
     {
       path: "*",
       component: Page404

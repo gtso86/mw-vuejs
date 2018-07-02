@@ -1,6 +1,6 @@
 <template class="container-fluid">
   <section class="row justify-content-center">
-    <form class="form-signin col-3">
+    <div class="form-signin col-3">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label
         for="inputEmail"
@@ -8,6 +8,7 @@
       >Email address</label>
       <input
         id="inputEmail"
+        v-model="form.email"
         type="email"
         class="form-control"
         placeholder="Email address"
@@ -20,6 +21,7 @@
       >Password</label>
       <input
         id="inputPassword"
+        v-model="form.password"
         type="password"
         class="form-control"
         placeholder="Password"
@@ -36,14 +38,34 @@
       <button
         class="btn btn-lg btn-primary btn-block"
         type="submit"
+        @click="login"
       >Sign in</button>
-    </form>
+    </div>
   </section>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
-  name: "UnitAuth"
+  name: "UnitAuth",
+  data() {
+    return {
+      form: {
+        email: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    ...mapActions("auth", ["attemptLogin"]),
+    login() {
+      const { form, $http } = this;
+      this.attemptLogin({ formData: form, http: $http }).then(() => {
+        console.log("ok");
+      });
+    }
+  }
 };
 </script>
 
