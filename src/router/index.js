@@ -7,12 +7,13 @@ import { routes as Units } from "../app/units";
 Vue.use(Router);
 
 export default new Router({
+  mode: "history",
   routes: [
+    ...Units,
     {
       path: "/",
-      redirect: "/content"
+      redirect: "/signin"
     },
-    ...Units,
     {
       path: "*",
       component: Page404
