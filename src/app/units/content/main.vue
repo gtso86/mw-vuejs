@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "unit-content"
+  name: "UnitContent"
 };
 </script>
 

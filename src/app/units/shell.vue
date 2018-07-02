@@ -11,9 +11,12 @@
 
 <script>
 export default {
-  name: "mw-shell"
+  name: "MWShell"
 };
 </script>
 
-<style lang="css">
+<style src="@/assets/styles/main.scss">
+</style>
+
+<style lang="scss">
 </style>
